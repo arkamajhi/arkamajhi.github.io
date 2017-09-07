@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Chord Diagram</title>
+    <script src="http://d3js.org/d3.v2.min.js?2.8.1"></script>
+    <!-- <script type="text/javascript" src="http://fleetinbeing.net/d3/d3.layout.js"></script> -->
+    <!-- This comes from here: http://fleetinbeing.net/d3e/chord.html -->
+    <!-- Another example comes from here: http://exposedata.com/tutorial/chord/latest.html -->
+    <style>
+      #chart {
+        font: 20px sans-serif;
+        font-weight: bolder;
+        position: relative;
+
+        top: 0px;
+         transform: rotate(0deg);
+         max-width: 500px;
+         margin: auto;
+         border: 3px solid #73AD21;
+
+      }
+
+      .chord path {
+        fill-opacity: .67;
+        stroke: #000;
+        stroke-width: .5px;
+      }
+
+      #circle circle {
+        fill: none;
+        pointer-events: all;
+      }
+
+      #circle:hover path.fade {
+        display: none;
+      }
+
+      #control {
+        position: fixed;
+        left: 40%;
+        align-items: center;
+        bottom: 5px;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="control">
+      <label>Show trains daparting on </label><label id="year" name="year"></label>:
+      <form>
+      <input id="slider" type="range" name="slider" min="0" max="10" value="0" step="1"/>
+      </form>
+    </div>
+    <div id="chart"></div>
+    <script type="text/javascript" src="chord.js"></script>
+  </body>
+</html>
